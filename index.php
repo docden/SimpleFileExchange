@@ -86,29 +86,29 @@ if ($dir = opendir($folder))
 {
 	echo "<table>";
 	echo "<tr>";
-	echo "<th>Name</th>";
-	echo "<th>Size</th>";
-	echo "<th>Action</th>";
+	    echo "<th>Name</th>";
+	    echo "<th>Size</th>";
+	    echo "<th>Action</th>";
 	echo "</tr>";
 	while (($file = readdir($dir)) !== false)
 	{
     	if (!is_dir ($file))
     	{
         	echo "<tr>";
-        	echo "<th>"."<a href="."'".rawurlencode ($file)."' download".">".$file."</a>"."</th>";
-        	echo "<th>".filesize ($file)."</th>";
-        	echo "<th>";
-        	echo "<form method='post' action='index.php'>";
-        	echo "<input type='hidden' name='file_name' value='".$file."'>";
-        	echo "<input type='submit' name='delete_file' value='Delete File'>";
-        	echo "</form>";
-        	echo "</th>";
+        	    echo "<th>"."<a href="."'".rawurlencode ($file)."' download".">".$file."</a>"."</th>";
+        	    echo "<th>".filesize ($file)."</th>";
+        	    echo "<th>";
+        	        echo "<form method='post' action='index.php'>";
+        	            echo "<input type='hidden' name='file_name' value='".$file."'>";
+        	            echo "<input type='submit' name='delete_file' value='Delete File'>";
+        	        echo "</form>";
+        	    echo "</th>";
         	echo "</tr>";
     	}
 	}
+    echo "</table>";
     closedir($dir);
 }
-//phpinfo();
 ?>
 </div>
 </div>
